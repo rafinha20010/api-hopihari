@@ -1,7 +1,18 @@
 const http = require("http");
-const app = require("./index");
+const app = require("./index"); // Certifique-se de que app.js existe aqui
+
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer(app);
-server.listen(3000, () => {
-    console.log("Api iniciada na porta 3000")
+
+server.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
+
+server.on("error", (err) => {
+  if (err.code === "EADDRINUSE") {
+    console.error(`❌ Erro: A porta ${PORT} já está em uso.`);
+  } else {
+    console.error("Erro inesperado:", err);
+  }
 });
