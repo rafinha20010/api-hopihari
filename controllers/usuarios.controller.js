@@ -17,7 +17,11 @@ exports.atualizarUsuario = async (req, res) => {
                         idUsuario
                     ]
             );
+            return res.status(201).send({
+                "Mensagem": "Usuario atualizado com sucesso",
+                "Resultado": resultado
+            });
         } catch (error) {
-
+            return res.status(500).send({"Mensagem": error});
     }
 }

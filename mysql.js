@@ -5,7 +5,7 @@ const pool = mysql2.createConnection({
     user: "root",
     password: "root",
     port: 3307,
-    database: "hopihari"
+    database: "hopihari_db"
 });
 
 exports.execute = (query, params = [], pool = pool) => {
