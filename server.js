@@ -1,7 +1,7 @@
 const http = require("http");
 const app = require("./index"); // Certifique-se de que app.js existe aqui
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 

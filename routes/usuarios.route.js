@@ -4,6 +4,6 @@ const usuariosController = require("../controllers/usuarios.controller")
 
 router.post('/login', ()=>{console.log('rota de login')});
 router.put('/:id', usuariosController.atualizarUsuario);
-router.post('/', ()=>{console.log('rota de atualizar')});
+router.post('/', usuariosController.cadastro);
 
 module.exports = router;
