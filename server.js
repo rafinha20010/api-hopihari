@@ -11,7 +11,7 @@ server.listen(PORT, () => {
 
 server.on("error", (err) => {
   if (err.code === "EADDRINUSE") {
-    console.error(`❌ Erro: A porta ${PORT} já está em uso.`);
+    console.error(`Erro: A porta ${PORT} já está em uso.`);
   } else {
     console.error("Erro inesperado:", erro);
   }
