@@ -5,6 +5,6 @@ const login = require("../middleware/usuarios.middleware")
 
 router.post('/login', usuariosController.login);
 router.put('/', login.required, usuariosController.atualizarUsuario);
-router.post('/cadastro', usuariosController.cadastro);
+router.post("/cadastro", usuariosController.cadastro);
 
 module.exports = router;

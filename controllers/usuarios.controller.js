@@ -36,23 +36,26 @@ exports.atualizarUsuario = async (req, res) => {
 // Inserir novo usuário
 exports.cadastro = async (req, res) => {
     try {
+       
+    
+        
         const hash = await bcrypt.hash(req.body.password, 10);
         const resultado = await mysql.execute(`
             INSERT INTO users (first_name, last_name, email, password, birth_date, phone) VALUES (?, ?, ?, ?, ?, ?);`, [
-                req.body.first_name,
-                req.body.last_name,
-                req.body.email,
-                hash,
-                req.body.birth_date,
-                req.body.phone
-            ]
+            req.body.first_name,
+            req.body.last_name,
+            req.body.email,
+            hash,
+            req.body.birth_date,
+            req.body.phone
+        ]
         );
 
-      return res.status(201).send({ mensagem: "Usuário cadastrado com sucesso!" });
+        return res.status(201).send({ mensagem: "Usuário cadastrado com sucesso!" });
     } catch (error) {
-        res.status(500).send(error);
+        res.status(500).send(error );
     }
-}
+};
 
 exports.login = async (req, res) => {
     try {
