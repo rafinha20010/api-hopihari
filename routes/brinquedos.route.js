@@ -7,6 +7,7 @@ router.post("/",
     login.required,
     login.userRequired,
     brinquedosController.cadastroBrinquedo
+    
 );
 
 router.get("/area/:areaName", login.required,
